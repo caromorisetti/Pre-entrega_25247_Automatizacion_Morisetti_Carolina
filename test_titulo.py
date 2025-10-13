@@ -6,7 +6,7 @@ driver = webdriver.Chrome()
 try:
     # Validacion del titulo de la pagina
     driver.get("https://www.saucedemo.com/")
-    print(driver.title)
+    print("El titulo es: ", driver.title)
     assert driver.title == "Swag Labs"
     time.sleep(4)
 finally:
