@@ -6,8 +6,8 @@ def test_navegacion():
      driver = webdriver.Chrome()
      # Espera implicita
      driver.implicitly_wait(5)
-     do_login(driver)
      try:
+          do_login(driver)
           # Interacciones
           productos = driver.find_elements(By.CLASS_NAME, "inventory_item")
           productos[0].find_element(By.TAG_NAME, "button").click()
