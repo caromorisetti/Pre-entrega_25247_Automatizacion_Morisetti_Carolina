@@ -3,9 +3,9 @@ from test_login import do_login
 import time
 from selenium.webdriver.common.by import By
 
-def test_compra():
-    driver = webdriver.Chrome()
+def test_compra(logged_in_driver):
     try:
+          driver = logged_in_driver
           do_login(driver)
           # Agregamos un producto al carrito
           driver.find_element(By.ID, "add-to-cart-sauce-labs-bolt-t-shirt").click()
