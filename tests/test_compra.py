@@ -1,5 +1,5 @@
 from selenium import webdriver
-from test_login import do_login
+from tests.test_login import do_login
 import time
 from selenium.webdriver.common.by import By
 
