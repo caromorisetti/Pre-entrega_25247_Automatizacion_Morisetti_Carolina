@@ -14,7 +14,7 @@ def do_login(driver):
         driver.find_element(By.ID, "login-button").click()
         # Validacion de la redireccion de la pagina
         assert '/inventory.html' in driver.current_url
-        time.sleep(2)    
+        time.sleep(2)
         print("Login exitoso y validado correctamente")
     except Exception as e:
         print("Error durante el login:", e)

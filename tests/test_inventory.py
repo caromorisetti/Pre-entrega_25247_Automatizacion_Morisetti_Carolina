@@ -7,6 +7,7 @@ def test_inventory(logged_in_driver):
           driver = logged_in_driver
           # Espera implicita
           driver.implicitly_wait(5)
+          # Login
           do_login(driver)
           # Navegamos a la sección de productos y validamos que se cargaron
           productos = driver.find_elements(By.CLASS_NAME, "inventory_item")
