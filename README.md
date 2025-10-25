@@ -25,14 +25,28 @@ El propósito de este proyecto es automatizar las pruebas funcionales del sitio 
 - venv\Scripts\activate   # En Windows
 - source venv/bin/activate  # En Mac o Linux
 4. Instalar dependencias necesarias
-   pip install
-5. pip install selenium
-6. pip install webdriver-manager
-7.pip install pytest pytest-html
+   - pip install
 
-## Comando para ejecutar las pruebas
-Pruebas
- - py -m pytest (nombre del test)
+## Ejecución de Pruebas con `run_test.py`
 
-Reporte de pruebas
- - pytest -v --html=reporte.html
+Este proyecto incluye un script llamado **`run_test.py`** que permite ejecutar de manera centralizada todas las pruebas y generar un reporte HTML automáticamente.  
+
+## Funcionamiento del script
+1. Lista de tests a ejecutar:  
+   Dentro del script se define un listado de archivos de prueba:  
+   ```python
+   test_files = [
+       "tests/test_login.py",
+       "tests/test_validation.py",
+       "tests/test_inventory.py",
+       "tests/test_purchase.py"
+   ]
+
+2. Argumentos de Pytest:
+Se agregan argumentos para:
+
+Ejecutar los tests de manera detallada (-v)
+
+Generar un reporte HTML (--html=report.html)
+
+Crear un reporte autocontenido, incluyendo estilos y recursos (--self-contained-html)
