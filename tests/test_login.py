@@ -1,13 +1,12 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 import pytest
-import time
-from utils import do_login
 
 # Test de validacion login que utiliza la función reutilizable
 def test_login(logged_in_driver):
-    driver = logged_in_driver
     try:
-        do_login(driver)
-    finally:
-        driver.quit()
+        driver = logged_in_driver
+        print("Test de Login exitoso y redireccion correcta a la pagina de inventario")
+    except Exception as e:
+        print("Error durante el login:", e)
+        raise

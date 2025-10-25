@@ -1,20 +1,15 @@
 from selenium import webdriver
-from tests.test_login import do_login
+from utils import get_products
 from selenium.webdriver.common.by import By
 
+# Test de navegacion y verificacion de productos en la pagina de inventario
 def test_inventory(logged_in_driver):
      try: 
           driver = logged_in_driver
-          # Espera implicita
-          driver.implicitly_wait(5)
-          # Login
-          do_login(driver)
-          # Navegamos a la sección de productos y validamos que se cargaron
-          productos = driver.find_elements(By.CLASS_NAME, "inventory_item")
-          assert len(productos) > 0    
+          driver.implicitly_wait(3)
+          products = get_products(driver)
+          assert len(products) > 0    
           print("Test de inventario exitoso: Productos cargados correctamente.")
      except Exception as e:
           print("Error durante la navegacion:", e)
           raise
-     finally:
-          driver.quit()
