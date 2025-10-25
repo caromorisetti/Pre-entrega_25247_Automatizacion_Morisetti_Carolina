@@ -1,19 +1,38 @@
-Proyecto de Pruebas del sitio saucedemo.com
+# Proyecto de Automatización de Pruebas - SauceDemo
 
-Este repositorio contiene pruebas automatizadas con Selenium para el sitio 'Saucedemo'.
+## Propósito del Proyecto
+El propósito de este proyecto es automatizar las pruebas funcionales del sitio **[SauceDemo](https://www.saucedemo.com/)** utilizando **Selenium** y **Pytest**.  
 
-Documentación
-Casos de prueba en google sheets https://docs.google.com/spreadsheets/d/16272wUnBzDcsaGbs5zlp1d4SSbgkgnooq1udbq-9tSc/edit?usp=sharing
+---
 
-Instalación
-Crear repositorio en github
+## Tecnologías Utilizadas
+- **Python 8.4.1**
+- **Selenium 4.36.0**
+- **Selenium WebDriver**
+- **Pytest**
+- **Pytest-HTML** (para generar reportes HTML)
 
+---
 
-Instalar las dependencias:
-pip install
+## Instrucciones de Instalación de Dependencias
 
-Ejecutar
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/caromorisetti/25247_Automatizacion_QA_Morisetti_Carolina.git
+2. Acceder al directorio 
+3. Crear entorno virtual
+  python -m venv venv
+- venv\Scripts\activate   # En Windows
+- source venv/bin/activate  # En Mac o Linux
+4. Instalar dependencias necesarias
+   pip install
+5. pip install selenium
+6. pip install webdriver-manager
+7.pip install pytest pytest-html
 
+## Comando para ejecutar las pruebas
+Pruebas
+ - py -m pytest (nombre del test)
 
-
-Librerias externas:
+Reporte de pruebas
+ - pytest -v --html=reporte.html
