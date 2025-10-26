@@ -18,7 +18,7 @@ El propósito de este proyecto es automatizar las pruebas funcionales del sitio 
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/caromorisetti/25247_Automatizacion_QA_Morisetti_Carolina.git
+   git clone https://github.com/caromorisetti/Pre-entrega_25247_Automatizacion_Morisetti_Carolina.git
 2. Acceder al directorio 
 3. Crear entorno virtual
   python -m venv venv
