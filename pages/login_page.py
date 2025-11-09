@@ -37,17 +37,12 @@ class LoginPage:
         return self
     # Método login completo
     def do_login(self, user, password):
-        self.open_page()
         self.enter_user(user)
         self.enter_password(password)
         self.click_button()
-        self.wait.until(EC.url_contains("/inventory.html"))
-        # Validacion de la redireccion de la pagina
-        assert '/inventory.html' in self.driver.current_url
+        return self
     # Método para obtener el mensaje de error
-    def obtener_error(self):
+    def get_error(self):
         div_error = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,".error-message-container h3")))
         return div_error.text
-        
-    
     
