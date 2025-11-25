@@ -1,15 +1,24 @@
 from selenium import webdriver
-from utils import get_products
 from selenium.webdriver.common.by import By
+from pages.ineventory_page import InventoryPage
+import pytest
 
-# Test de navegacion y verificacion de productos en la pagina de inventario
-def test_inventory(logged_in_driver):
+@pytest.mark.parametrize("user,password", [("standard_user","secret_sauce")])
+def test_inventory(logged_in_driver,user,password):
      try: 
           driver = logged_in_driver
           driver.implicitly_wait(3)
-          products = get_products(driver)
-          assert len(products) > 0    
-          print("Test de inventario exitoso: Productos cargados correctamente.")
+          inventory_page = InventoryPage(driver)
+          # Verificamos que hay productos en inventario
+          assert len(inventory_page.get_products()) > 0, "No hay productos en inventario"
+          # Verificar que el carrito está vacío inicialmente
+          assert inventory_page.get_count_product() == 0, "El carrito no está vacío inicialmente"
+          # Agregamos un producto al carrito
+          inventory_page.add_product_to_cart()
+          # Verificamos que el carrito tiene 1 producto
+          assert inventory_page.get_count_product() == 1, "El carrito no tiene 1 producto después de agregar"
+          # Abrimos el carrito de compras
+          inventory_page.open_shopping_cart()
      except Exception as e:
           print("Error durante la navegacion:", e)
           raise
